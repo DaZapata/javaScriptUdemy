@@ -30,6 +30,10 @@ for (let i = 0; i < 10; i++) {
     break;
   }
 }
+
+
+
+
 console.log("-----WHILE------");
 var i = 0;
 while (i < 10) {
