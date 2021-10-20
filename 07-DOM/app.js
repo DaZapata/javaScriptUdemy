@@ -165,8 +165,22 @@ function filtrarItems(e) {
   });
 }
 
-console.log(document.getElementById("main-header"));
-var header = document.getElementById("main-header");
-console.log(header);
+//console.log(document.getElementById("main-header"));
+//var header = document.getElementById("main-header");
+//console.log(header);
 
-header.textContent = 'Holaaaas'
+//header.textContent = 'Holaaaas'
+
+//AGREGAR eventos
+
+//-- accedemos al document para obtener el id del boton, le ponemos que escuche con addevent... seguidamente que escuche el 'click', y que ejecute una funcion la cual esta en la segunda liena
+document.getElementById("boton").addEventListener("click", function () {
+  console.log("click2");
+});
+
+//--aca con el mismo boton cambiamos el texto de del titulo del header
+// document.getElementById('boton').addEventListener('click', function2);
+
+// function function2() {
+//   document.getElementById('header-title').textContent = "Texto cambiado"
+// }
