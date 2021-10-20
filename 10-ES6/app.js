@@ -84,3 +84,58 @@ console.log(edad5);
 let edad6 = years.map((el) => 2019 - el);
 console.log(edad6);
 
+edad6 = years.map((el, index) => `Edad ${index + 1}: ${2019 - el}`);
+console.log(edad6);
+
+edad6 = years.map(
+  (el, index) => {
+    const yearActual = new Date().getFullYear();
+    const edad = yearActual - el;
+    return `Edad ${index + 1}: ${edad}`;
+  }
+);
+console.log(edad6);
+
+
+// -- funcion normal ---
+function cuadrado(num){
+  return num * num
+}
+console.log(cuadrado(5));
+
+// funcion flecha
+const cuadradoF = (num) => num * num;
+console.log(cuadradoF(6));
+
+const personas = [
+  {
+    nombre: 'david',
+    edad: 34
+  }, 
+  {
+    nombre: 'maria',
+    edad: 31
+  },
+  {
+    nombre: 'jeronimo',
+    edad: 7
+  },
+  {
+    nombre: 'chanel',
+    edad: 3
+  }
+];
+
+//-- funcion normal--
+const menores30 = personas.filter(function(personas){
+  return personas.edad < 30;
+});
+console.log(menores30);
+
+// --funcion flecha --
+
+const menores25 = personas.filter((persona) => persona.edad < 25);
+console.log(menores25);
+
+// -- destructuracion --
+
