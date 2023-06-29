@@ -212,11 +212,63 @@ var datos = ['Pablo', 25];
 // console.log(edad);
 
 //con objetos
-const persona = {
-  nombre: 'Carlos',
-  edad: 30
+// const persona = {
+//   nombre: 'Carlos',
+//   edad: 30
+// }
+
+// const {nombre, edad} = persona;
+// console.log(nombre);
+// console.log(edad);
+
+// const calcMayoriaEdad = (year) => {
+//   const edad = new Date().getFullYear() - year;
+//   const mayoria = edad >= 18 ? true : false;
+//   return [edad, mayoria];
+// }
+
+// const [edad2, mayoria] = calcMayoriaEdad(2014);
+// console.log(edad2);
+// console.log(`Es mayor de edad: ${mayoria}`);
+
+
+/***** Mapas ******/
+
+// const data = new Map();
+
+// data.set('nombre', 'david');
+// data.set('edad', 36);
+// data.set(1, 'davidzapata56@gmail.com');
+// data.set('movil', 9999999);
+
+// console.log(data.get('nombre'));
+// console.log(data.size);
+
+// //data.delete(1);
+
+// data.forEach((value, key) => {
+//     console.log(`${key} : ${value}`);
+// });
+
+/******  Spread OIperator  ******/
+
+var suma = function(a,b,c,d){
+    return a+b+c+d;
 }
 
-const {nombre, edad} = persona;
-console.log(nombre);
-console.log(edad);
+var ope1 = suma(10,20,30,40);
+console.log(ope1);
+
+//ES6
+var valores = [10,20,30,40];
+const ope2 = suma(...valores);
+console.log(ope2);
+
+const rrhh = ['pedro', 'pablo', 'ana'];
+const contabiolidad = ['felipe','carlos','maria'];
+
+const empresa = [...rrhh, ...contabiolidad];
+console.log(empresa);
+
+
+
