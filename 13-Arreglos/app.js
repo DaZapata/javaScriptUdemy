@@ -67,4 +67,15 @@ const buscarIngrediente = function(ensalada, titulo){
     return index;
 }
 
-console.log(ensalada[buscarIngrediente(ensalada, 'cebolla')]);
+//console.log(ensalada[buscarIngrediente(ensalada, 'cebolla')]);
+
+///filtrado inteligente en arreglos/////
+// const paises = ['colombia', 'peru', 'ecuador', 'mexico']
+// console.log(paises.filter(pais => pais.includes('o')));
+
+const filtrarIngredientes = ensalada.filter(function(ing, index){
+    const ingredientes = ing.titulo.includes('e')
+    return ingredientes
+})
+
+console.log(filtrarIngredientes);
