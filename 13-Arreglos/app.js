@@ -73,9 +73,27 @@ const buscarIngrediente = function(ensalada, titulo){
 // const paises = ['colombia', 'peru', 'ecuador', 'mexico']
 // console.log(paises.filter(pais => pais.includes('o')));
 
-const filtrarIngredientes = ensalada.filter(function(ing, index){
-    const ingredientes = ing.titulo.includes('e')
-    return ingredientes
-})
+// const filtrarIngredientes = ensalada.filter(function(ing, index){
+//     const ingredientes = ing.titulo.includes('e')
+//     return ingredientes
+// })
 
-console.log(filtrarIngredientes);
+// //console.log(filtrarIngredientes);
+
+// console.log(ensalada);
+// ///ordenamiento en arreglos/////
+// ensalada.sort(function(a,b){
+//     if (a.titulo > b.titulo){
+//         return 1
+//     }
+//     if (a.titulo < b.titulo){
+//         return -1
+//     }
+// })
+// console.log(ensalada);
+
+const nombres = ['zimon', 'teo', 'ana', 'carlos']
+console.log(nombres);
+
+nombres.sort();
+console.log(nombres);
