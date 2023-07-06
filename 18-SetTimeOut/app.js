@@ -156,4 +156,17 @@ async function getUsersAW(){
     return user
 }
 
-getUsersAW().then(resultado => console.log(`${resultado} es un usuario`))
+//getUsersAW().then(resultado => console.log(`${resultado} es un usuario`))
+
+//ejemnplo llamada ajax HTMl Request
+
+const request = new XMLHttpRequest();
+
+request.addEventListener('readystatechange', (e) => {
+    if (e.target.readyState === 4){
+        const datos = JSON.parse(e.target.responseText)
+        console.log(datos);
+    }
+})
+request.open('GET','https://jsonplaceholder.typicode.com/users')
+request.send()
