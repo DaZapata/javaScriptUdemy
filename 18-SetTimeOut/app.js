@@ -71,7 +71,52 @@
 //     console.log(resp);
 // })
 
-//De callbacks a promises
+// //De callbacks a promises
+// const getUsersIds = new Promise((response, reject) => {
+//     setTimeout(() => {
+//         response([101, 102, 103, 105])
+//     }, 1500)
+// })
+
+// const getUser = userId => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(id => {
+//             const user = {
+//                 email: 'david@mail.com',
+//                 name: 'david'
+//             }
+//             resolve(`${id} = ${user.email} - ${user.name}`);
+//         }, 1500, userId)
+//     })
+// }
+
+// getPermisos = (id) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(id => {
+//             const permiso = ['admin', 'creador']
+//             resolve(permiso)
+//         }, 1500, id)
+//     })
+// }
+
+// getUsersIds
+// .then(Ids => {
+//     console.log((Ids));
+//     return getUser(Ids[3])
+// })
+// .then(user => {
+//     console.log(user);
+//     return getPermisos(user.id)
+// })
+// .then(permisos => {
+//     console.log(permisos);
+// })
+// .catch(() => {
+//     console.log('Error');
+// })
+
+//de promesas a async await
+
 const getUsersIds = new Promise((response, reject) => {
     setTimeout(() => {
         response([101, 102, 103, 105])
@@ -99,18 +144,16 @@ getPermisos = (id) => {
     })
 }
 
-getUsersIds
-.then(Ids => {
-    console.log((Ids));
-    return getUser(Ids[3])
-})
-.then(user => {
+//funcion con async await
+async function getUsersAW(){
+    const Ids = await getUsersIds
+    console.log(Ids);
+    const user = await getUser(Ids[2])
     console.log(user);
-    return getPermisos(user.id)
-})
-.then(permisos => {
+    const permisos = await getPermisos(user.id)
     console.log(permisos);
-})
-.catch(() => {
-    console.log('Error');
-})
+
+    return user
+}
+
+getUsersAW().then(resultado => console.log(`${resultado} es un usuario`))
