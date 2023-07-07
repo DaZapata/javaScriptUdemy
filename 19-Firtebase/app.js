@@ -14,6 +14,8 @@ const renderList = (doc) => {
     let div = document.createElement('div');
     let titulo = document.createElement('span');
     titulo.textContent = doc.data().titulo;
+    let hours = document.createElement('span');
+    hours.textContent = doc.data().hours;
 
     let enlace = document.createElement('a');
     enlace.href = '#modal1';
@@ -29,6 +31,7 @@ const renderList = (doc) => {
 
     enlace.appendChild(editBtn);
     div.appendChild(titulo);
+    div.appendChild(hours);
     div.appendChild(delBtn);
     div.appendChild(enlace);
     li.appendChild(div);
@@ -56,9 +59,11 @@ updateBtn.addEventListener('click', e => {
 form.addEventListener('submit', e => {
     e.preventDefault();
     db.collection('tareas').add({
-        titulo: form.titulo.value
+        titulo: form.titulo.value,
+        hours: form.hours.value
     })
     form.titulo.value = '';
+    form.hours.value = '';
 })
 
 db.collection('tareas').orderBy('titulo').onSnapshot( snapshot => {
