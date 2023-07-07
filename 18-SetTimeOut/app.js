@@ -165,8 +165,15 @@ const request = new XMLHttpRequest();
 request.addEventListener('readystatechange', (e) => {
     if (e.target.readyState === 4){
         const datos = JSON.parse(e.target.responseText)
+        const datos1 = datos.results
         console.log(datos);
+        console.log(datos1);
+        datos1.forEach(function(elemento) {
+            if (elemento.id === 1) {
+              console.log(elemento.name);
+            }
+        })
     }
 })
-request.open('GET','https://jsonplaceholder.typicode.com/users')
+request.open('GET','https://rickandmortyapi.com/api/character')
 request.send()
